@@ -2,7 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from './context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Globe, Menu, X, Phone } from 'lucide-react';
+import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
 import { LogoEmblem } from './components/LogoEmblem';
 import Home from './pages/Home';

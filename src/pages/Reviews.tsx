@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { Card, Button, Input, Textarea } from '../components/ui';
 import { BlueprintTransition } from '../components/BlueprintTransition';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, Trash2 } from 'lucide-react';
 
 const Reviews = () => {
   const { t } = useLanguage();
@@ -13,6 +13,13 @@ const Reviews = () => {
     { name: "Maria Garcia", rating: 5, comment: "The structural concrete work was completed ahead of schedule. Highly recommend.", date: "2024-03-02" },
     { name: "David Wilson", rating: 4, comment: "Great communication throughout the framing project. Quality is top-notch.", date: "2024-01-20" },
   ]);
+
+  const handleDelete = (index: number) => {
+    if (window.confirm("Are you sure you want to delete this review? / ¿Estás seguro de que quieres eliminar esta reseña?")) {
+      const updatedReviews = reviews.filter((_, i) => i !== index);
+      setReviews(updatedReviews);
+    }
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -79,8 +86,17 @@ const Reviews = () => {
                     </div>
                     <p className="mb-8 text-xl italic leading-relaxed opacity-80 font-medium">"{review.comment}"</p>
                     <div className="flex items-center justify-between border-t border-[var(--line-color)] pt-6">
-                      <p className="font-black text-lg tracking-tight uppercase">{review.name}</p>
-                      <p className="text-sm font-bold opacity-40 uppercase tracking-widest">{review.date}</p>
+                      <div>
+                        <p className="font-black text-lg tracking-tight uppercase">{review.name}</p>
+                        <p className="text-sm font-bold opacity-40 uppercase tracking-widest">{review.date}</p>
+                      </div>
+                      <button 
+                        onClick={() => handleDelete(i)}
+                        className="p-3 text-red-500 hover:bg-red-500/10 rounded-xl transition-all cursor-pointer"
+                        title="Delete Review"
+                      >
+                        <Trash2 className="h-5 w-5" />
+                      </button>
                     </div>
                   </Card>
                 </motion.div>
