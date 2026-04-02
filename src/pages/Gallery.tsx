@@ -7,18 +7,13 @@ const Gallery = () => {
   const { t } = useLanguage();
   const [filter, setFilter] = useState('all');
 
-  const categories = ['all', 'masonry', 'concrete', 'carpentry', 'remodeling'];
+  const categories = ['all', 'masonry', 'remodeling'];
 
   const projects = [
     { title: "Stone Masterpiece Fireplace", category: "masonry", img: "/projects/terminado5.jpg" },
-    { title: "Mountain Deck Structure", category: "carpentry", img: "/projects/terminado6.jpg" },
-    { title: "Structural Foundation & Framing", category: "concrete", img: "/projects/terminado4.jpg" },
     { title: "Fireplace Technical Build", category: "masonry", img: "/projects/temrinado2.jpg" },
     { title: "Finished Masonry Detail", category: "masonry", img: "/projects/terminado1.jpg" },
     { title: "Luxury Fireplace Finish", category: "masonry", img: "/projects/termiando3.jpg" },
-    { title: "Precision Railing Detail", category: "carpentry", img: "/projects/termiando7.jpg" },
-    { title: "Concrete Hardscape", category: "concrete", img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200" },
-    { title: "Alpine Roof Structure", category: "carpentry", img: "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&q=80&w=1200" },
   ];
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter);

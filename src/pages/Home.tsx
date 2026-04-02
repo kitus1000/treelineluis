@@ -58,7 +58,7 @@ const Home = () => {
             className="mb-12 relative"
           >
             <div className="absolute -inset-10 bg-[var(--accent)] opacity-10 blur-3xl rounded-full" />
-            <LogoEmblem className="h-32 w-32 relative z-10 text-[var(--accent)] bloom" />
+            <LogoEmblem className="h-64 w-64 md:h-80 md:w-80 relative z-10 bloom" />
           </motion.div>
 
           <motion.h1 

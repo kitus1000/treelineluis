@@ -24,14 +24,6 @@ export const translations = {
         title: "Masonry",
         desc: "Expert cement block work, foundations, and structural shell work.",
       },
-      carpentry: {
-        title: "Carpentry",
-        desc: "High-quality framing, roofing support, and custom woodworking.",
-      },
-      concrete: {
-        title: "Concrete",
-        desc: "Foundations, sidewalks, driveways, and premium concrete finishes.",
-      },
       contractor: {
         title: "General Contractor",
         desc: "Comprehensive project management for full-scale remodeling and construction.",
@@ -99,14 +91,6 @@ export const translations = {
       masonry: {
         title: "Albañilería",
         desc: "Trabajo experto en bloques de cemento, cimientos y obra negra estructural.",
-      },
-      carpentry: {
-        title: "Carpintería",
-        desc: "Enmarcado de alta calidad, soporte de techado y carpintería personalizada.",
-      },
-      concrete: {
-        title: "Concreto",
-        desc: "Cimientos, aceras, entradas de vehículos y acabados de concreto premium.",
       },
       contractor: {
         title: "Contratista General",

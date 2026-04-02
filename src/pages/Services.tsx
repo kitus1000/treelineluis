@@ -3,13 +3,11 @@ import { useLanguage } from '../context/LanguageContext';
 import { Card, CardContent } from '../components/ui';
 import { BlueprintTransition } from '../components/BlueprintTransition';
 import { motion } from 'framer-motion';
-import { Hammer, BrickWall, Home as HomeIcon, Droplet, Ruler, Paintbrush } from 'lucide-react';
+import { Hammer, BrickWall, Ruler, Paintbrush } from 'lucide-react';
 import FloatingWordsOverlay from '../components/FloatingWordsOverlay';
 
 const serviceKeywords: Record<string, string[]> = {
   masonry: ['Stone', 'Brick', 'Mortar', 'Hearth', 'Fireplace', 'Chimney', 'Retaining Wall', 'Masterpiece', 'Precision', 'Durability', 'Natural', 'Vail Luxury'],
-  carpentry: ['Wood', 'Timber', 'Deck', 'Framing', 'Structure', 'Cedar', 'Alpine', 'Joinery', 'Craftsmanship', 'Elegant', 'Durable', 'Custom Framing'],
-  concrete: ['Foundation', 'Slab', 'Hardscape', 'Structural', 'Reinforcement', 'Pouring', 'Footing', 'Reliable', 'Engineering', 'Core', 'Vail Build'],
   demolition: ['Clearance', 'Safety', 'Precision', 'Removal', 'Prep', 'Clean', 'Professional', 'Efficient', 'Site Prep', 'Waste Mgmt'],
   remodeling: ['Transformation', 'Design', 'Luxury', 'Renewal', 'Modern', 'Custom', 'Enhancement', 'Vision', 'Aesthetic', 'High-End'],
   contractor: ['Management', 'Coordination', 'Planning', 'Execution', 'Expertise', 'Reliability', 'Consulting', 'Full Service']
@@ -22,8 +20,6 @@ const Services = () => {
   const servicesList = [
     { key: 'demolition', icon: <Hammer className="h-8 w-8 text-cyan-400" /> },
     { key: 'masonry', icon: <BrickWall className="h-8 w-8 text-cyan-400" /> },
-    { key: 'carpentry', icon: <HomeIcon className="h-8 w-8 text-cyan-400" /> },
-    { key: 'concrete', icon: <Droplet className="h-8 w-8 text-cyan-400" /> },
     { key: 'contractor', icon: <Ruler className="h-8 w-8 text-cyan-400" /> },
     { key: 'remodeling', icon: <Paintbrush className="h-8 w-8 text-cyan-400" /> },
   ];

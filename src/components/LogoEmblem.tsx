@@ -1,71 +1,81 @@
 import { motion } from 'framer-motion';
 
-export const LogoEmblem = ({ className = "h-12 w-12" }: { className?: string }) => {
+export const LogoEmblem = ({ 
+  className = "h-48 w-48",
+  showText = true 
+}: { 
+  className?: string,
+  showText?: boolean
+}) => {
   return (
-    <div className={`relative ${className}`}>
-      <svg
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-full w-full"
-      >
-        {/* Hexagonal Outer Frame */}
-        <motion.path
-          d="M50 5 L89 27.5 L89 72.5 L50 95 L11 72.5 L11 27.5 Z"
-          stroke="currentColor"
-          strokeWidth="2"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
-        
-        {/* "T" for Treeline - Stylized as structural beams */}
-        <motion.path
-          d="M30 35 H70 M50 35 V75"
-          stroke="currentColor"
-          strokeWidth="4"
-          strokeLinecap="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
-        />
-
-        {/* "M" for Masonry - Stylized as arches/mountains */}
-        <motion.path
-          d="M25 75 V45 L50 65 L75 45 V75"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 1.8, delay: 1, ease: "easeInOut" }}
-        />
-
-        {/* Structural Cross-points (Glow nodes) */}
-        <motion.circle
-          cx="50" cy="35" r="2"
-          fill="currentColor"
-          initial={{ scale: 0 }}
-          animate={{ scale: [0, 1.5, 1] }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-        />
-        <motion.circle
-          cx="50" cy="65" r="2"
-          fill="currentColor"
-          initial={{ scale: 0 }}
-          animate={{ scale: [0, 1.5, 1] }}
-          transition={{ delay: 2, duration: 0.5 }}
-        />
-      </svg>
-      
-      {/* Decorative Glow Ring */}
-      <motion.div
-        className="absolute inset-0 rounded-full border border-cyan-500/20"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: [0.8, 1.2, 1], opacity: [0, 0.5, 0.2] }}
-        transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+    <motion.div 
+      className={`relative flex flex-col items-center justify-center cursor-pointer ${className}`}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ 
+        duration: 1, 
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.1
+      }}
+    >
+      {/* Dynamic Background Glow - Pulses slowly to feel 'alive' */}
+      <motion.div 
+        className="absolute inset-0 bg-[var(--company-gold)] opacity-20 blur-[100px] rounded-full scale-150 pointer-events-none"
+        animate={{
+          opacity: [0.1, 0.25, 0.1],
+          scale: [1.4, 1.6, 1.4],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
-    </div>
+      
+      {/* Floating Logo Container */}
+      <motion.div
+        className="relative z-10 w-full h-full"
+        animate={{
+          y: [0, -8, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        whileHover={{ scale: 1.08, rotate: [0, -1, 1, 0] }}
+      >
+        <img 
+          src="/treeline_logo_transparent.png" 
+          alt="Treeline Masonry & Construction"
+          className="w-full h-full object-contain filter drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+        />
+
+        {/* Shimmer Effect overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent z-20 pointer-events-none rounded-full"
+          animate={{
+            x: ['-100%', '200%'],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2.5,
+            ease: 'linear',
+            repeatDelay: 3
+          }}
+        />
+      </motion.div>
+
+      {/* Decorative architectural rings (Subtle) */}
+      <motion.div 
+        className="absolute inset-0 border border-[var(--company-gold)]/10 rounded-full scale-125 pointer-events-none"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      />
+    </motion.div>
   );
 };
+
+
+
+

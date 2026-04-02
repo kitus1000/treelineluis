@@ -30,15 +30,15 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[var(--nav-bg)] backdrop-blur-xl transition-colors duration-700">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-4 group">
-          <div className="relative h-14 w-14 rounded-2xl bg-white/5 p-2 border border-white/10 group-hover:border-cyan-500/50 transition-all duration-500 shadow-lg">
-            <LogoEmblem className="h-full w-full text-cyan-500" />
-            <div className="absolute inset-0 bg-cyan-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="relative h-24 w-24 rounded-3xl bg-white/5 p-4 border border-white/10 group-hover:border-[var(--company-gold)] transition-all duration-500 shadow-xl">
+            <LogoEmblem className="h-full w-full" showText={false} />
+            <div className="absolute inset-0 bg-[var(--company-gold)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl font-black tracking-tighter leading-none">
+            <span className="text-3xl font-black tracking-tighter leading-none text-[var(--company-brown)]">
               TREELINE
             </span>
-            <span className="text-xs font-bold tracking-[0.3em] text-cyan-500 uppercase">
+            <span className="text-sm font-bold tracking-[0.3em] text-[var(--company-gold)] uppercase">
               Masonry & Construction
             </span>
           </div>
@@ -142,9 +142,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <div className="blueprint-grid absolute inset-0 opacity-[0.03]" />
         <div className="mx-auto max-w-7xl px-6 lg:px-10 relative z-10">
           <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-4 mb-24">
-             <div className="lg:col-span-2 space-y-8">
-                <LogoEmblem className="h-16 w-16 text-[var(--accent)] opacity-80" />
-                 <p className="text-4xl font-black tracking-tighter leading-none mb-6">Treeline Masonry & Construction LLC</p>
+             <div className="lg:col-span-2 space-y-10 text-center md:text-left">
+                <LogoEmblem className="h-48 w-48 mx-auto md:mx-0" />
                  <p className="max-w-md text-lg opacity-60 leading-relaxed font-medium transition-colors">
                     Providing premium construction services with a focus on structural excellence and aesthetic precision. 
                     Serving Vail, CO and the surrounding mountain regions.
