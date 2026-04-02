@@ -31,7 +31,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-4 group">
           <div className="relative h-24 w-24 rounded-3xl bg-white/5 p-4 border border-white/10 group-hover:border-[var(--company-gold)] transition-all duration-500 shadow-xl">
-            <LogoEmblem className="h-full w-full" showText={false} />
+            <LogoEmblem className="h-full w-full" />
             <div className="absolute inset-0 bg-[var(--company-gold)]/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">

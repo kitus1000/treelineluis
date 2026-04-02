@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
 
 export const LogoEmblem = ({ 
-  className = "h-48 w-48",
-  showText = true 
+  className = "h-48 w-48"
 }: { 
-  className?: string,
-  showText?: boolean
+  className?: string
 }) => {
   return (
     <motion.div 
