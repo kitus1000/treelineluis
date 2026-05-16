@@ -146,7 +146,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                 <LogoEmblem className="h-48 w-48 mx-auto md:mx-0" />
                  <p className="max-w-md text-lg opacity-60 leading-relaxed font-medium transition-colors">
                     Providing premium construction services with a focus on structural excellence and aesthetic precision. 
-                    Serving Vail, CO and the surrounding mountain regions.
+                    Serving Eagle County and surrounding counties.
                  </p>
              </div>
              <div>

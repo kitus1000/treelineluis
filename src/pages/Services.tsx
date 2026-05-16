@@ -7,7 +7,7 @@ import { Hammer, BrickWall, Ruler, Paintbrush } from 'lucide-react';
 import FloatingWordsOverlay from '../components/FloatingWordsOverlay';
 
 const serviceKeywords: Record<string, string[]> = {
-  masonry: ['Stone', 'Brick', 'Mortar', 'Hearth', 'Fireplace', 'Chimney', 'Retaining Wall', 'Masterpiece', 'Precision', 'Durability', 'Natural', 'Vail Luxury'],
+  masonry: ['Stone', 'Brick', 'Mortar', 'Hearth', 'Fireplace', 'Chimney', 'Retaining Wall', 'Masterpiece', 'Precision', 'Durability', 'Natural', 'Eagle County Luxury'],
   demolition: ['Clearance', 'Safety', 'Precision', 'Removal', 'Prep', 'Clean', 'Professional', 'Efficient', 'Site Prep', 'Waste Mgmt'],
   remodeling: ['Transformation', 'Design', 'Luxury', 'Renewal', 'Modern', 'Custom', 'Enhancement', 'Vision', 'Aesthetic', 'High-End'],
   contractor: ['Management', 'Coordination', 'Planning', 'Execution', 'Expertise', 'Reliability', 'Consulting', 'Full Service']

@@ -57,7 +57,7 @@ export const translations = {
       phone: "Phone Number",
       email: "Email Address",
       location: "Service Area",
-      locationValue: "Vail, CO and surrounding areas",
+      locationValue: "Eagle County and surrounding counties",
     },
     footer: "Premium Construction Services",
     why_us: {
@@ -125,7 +125,7 @@ export const translations = {
       phone: "Número de Teléfono",
       email: "Correo Electrónico",
       location: "Área de Servicio",
-      locationValue: "Vail, CO y áreas circundantes",
+      locationValue: "Eagle County y condados circundantes",
     },
     footer: "Servicios de Construcción Premium",
     why_us: {

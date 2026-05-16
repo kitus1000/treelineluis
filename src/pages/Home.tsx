@@ -35,8 +35,8 @@ const Home = () => {
     <BlueprintTransition>
       <div className="flex flex-col gap-32 pb-32 pt-10 relative z-10">
         {/* Hero Section */}
-        <section className="relative flex min-h-[90vh] flex-col items-center justify-center px-4 text-center">
-          <div className="absolute inset-0 -z-10 overflow-hidden rounded-[4rem] border border-[var(--card-border)] mx-4 md:mx-10 bg-[var(--bg-color)]">
+        <section className="relative flex min-h-[90vh] flex-col items-center justify-center px-4 pt-16 md:pt-0 text-center">
+          <div className="absolute inset-0 -z-10 overflow-hidden rounded-[2.5rem] md:rounded-[4rem] border border-[var(--card-border)] mx-2 md:mx-10 bg-[var(--bg-color)]">
              <AnimatePresence mode="wait">
                <motion.img
                  key={currentSlide}
@@ -55,17 +55,17 @@ const Home = () => {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-12 relative"
+            className="mb-8 md:mb-12 relative"
           >
-            <div className="absolute -inset-10 bg-[var(--accent)] opacity-10 blur-3xl rounded-full" />
-            <LogoEmblem className="h-64 w-64 md:h-80 md:w-80 relative z-10 bloom" />
+            <div className="absolute -inset-10 bg-[var(--accent)] opacity-10 blur-2xl md:blur-3xl rounded-full" />
+            <LogoEmblem className="h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80 relative z-10 bloom" />
           </motion.div>
 
           <motion.h1 
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8 max-w-5xl text-5xl font-black tracking-tight md:text-8xl leading-[1.1]"
+            className="mb-6 md:mb-8 max-w-5xl text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] md:leading-[1.1]"
           >
             {t.hero.title}
           </motion.h1>
@@ -74,7 +74,7 @@ const Home = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-10 max-w-2xl text-lg opacity-60 md:text-xl font-medium"
+            className="mb-8 md:mb-10 max-w-2xl text-base sm:text-lg md:text-xl opacity-70 font-medium px-4"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -83,16 +83,16 @@ const Home = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col gap-4 sm:flex-row"
+            className="flex flex-col gap-4 sm:flex-row w-full max-w-md sm:max-w-none mx-auto justify-center"
           >
-            <Link to="/services">
-              <Button className="w-full sm:w-auto h-16 px-10 text-xl tracking-wide rounded-2xl">
+            <Link to="/services" className="w-full sm:w-auto">
+              <Button className="w-full h-14 md:h-16 px-8 md:px-10 text-lg md:text-xl tracking-wide rounded-2xl shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.5)] transition-all">
                 {t.hero.cta}
-                <ChevronRight className="ml-2 h-6 w-6" />
+                <ChevronRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
               </Button>
             </Link>
-            <Link to="/contact">
-              <Button variant="outline" className="w-full sm:w-auto h-16 px-10 text-xl border-2 rounded-2xl">
+            <Link to="/contact" className="w-full sm:w-auto">
+              <Button variant="outline" className="w-full h-14 md:h-16 px-8 md:px-10 text-lg md:text-xl border-2 rounded-2xl hover:bg-[var(--accent)]/5">
                 {t.hero.contact}
               </Button>
             </Link>
