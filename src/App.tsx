@@ -2,9 +2,10 @@ import { useState, type ReactNode } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useLanguage } from './context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Globe, Menu, X } from 'lucide-react';
+import { Sun, Moon, Globe, Menu, X, Camera } from 'lucide-react';
 import { useTheme } from './context/ThemeContext';
 import { LogoEmblem } from './components/LogoEmblem';
+import { PermissionModal } from './components/PermissionModal';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Gallery from './pages/Gallery';
@@ -15,6 +16,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [manualPermissionTrigger, setManualPermissionTrigger] = useState(0);
   const location = useLocation();
 
   const navItems = [
@@ -27,6 +29,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="min-h-screen">
+      <PermissionModal manualOpenTrigger={manualPermissionTrigger} />
+
       <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[var(--nav-bg)] backdrop-blur-xl transition-colors duration-700">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-10">
         <Link to="/" className="flex items-center gap-4 group">
@@ -60,6 +64,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </div>
 
           <div className="flex items-center gap-4">
+            {/* Camera & Storage Permissions Button */}
+            <button
+              onClick={() => setManualPermissionTrigger((prev) => prev + 1)}
+              title={t.permissions.nav_status_btn}
+              className="flex h-12 items-center gap-2 rounded-2xl bg-[var(--company-gold)]/10 border border-[var(--company-gold)]/30 text-[var(--company-gold)] px-4 text-xs font-black uppercase tracking-wider hover:bg-[var(--company-gold)]/20 transition-all shadow-md group"
+            >
+              <Camera className="h-4 w-4 group-hover:scale-110 transition-transform" />
+              <span className="hidden sm:inline">{t.permissions.nav_status_btn}</span>
+            </button>
+
             <button
               onClick={toggleTheme}
               className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--accent)]/5 border border-[var(--accent)]/10 text-[var(--text-color)] transition-all hover:bg-[var(--accent)]/10 hover:border-[var(--accent)]/30 group"
